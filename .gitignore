@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.local/
+.env
+.env.*
+!.env.example
+artifacts/
+*.log
+*.zip
+*.exe
+*.dmg
