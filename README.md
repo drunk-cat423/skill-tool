@@ -55,7 +55,7 @@ python scripts/restore.py --agent generic --rules-file /absolute/path/to/agent-r
 |---|---|
 | 搜索、打开原始网页、页面交互 | Ego Lite / ego-browser |
 | Windows/macOS/Linux 原生应用、系统窗口、文件选择框 | cua.ai Cua Driver |
-| 非琐碎工程任务 | 可选 pstack，通过本地 pstack-auto 加载 |
+| 非琐碎工程任务 | 可选 pstack，通过本地 pstack-auto 加载；Luna 执行明确任务，Sol 处理常规与复杂开发，百炼 DS 独立审核 |
 | 桌面输入 | 先精确窗口、语义元素、background；禁止自动前台回退 |
 | Astra | 默认及最高 Medium，不通过其他角色或接口绕过 |
 
@@ -68,7 +68,7 @@ Cua Driver 与 Codex 内置 Computer Use 不是同一产品。Vercel agent-deskt
 - `skills/setup-cua-driver/`：安装、接入、冲突处理和验收指引。实际操作使用官方安装的 `cua-driver` Skill。
 - `skills/pstack-auto/`：Codex 可选自动入口，不修改上游插件缓存。
 - `templates/AGENTS.md`：可移植的个人约定。
-- `templates/pstack-models.md`：角色继承父会话与 Astra 上限。
+- `templates/pstack-models.md`：Sol / Luna / 百炼 DS 分工、预算换算、T3 路由与 Astra 上限；详见 [pstack 设置](docs/pstack.md)。
 - `scripts/restore.py`：有预览、冲突检查和备份的文件恢复器。
 - `scripts/doctor.py`：只读检查工具是否存在及 Codex 覆盖项，不输出凭证，不启动 GUI。
 

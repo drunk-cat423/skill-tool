@@ -7,7 +7,7 @@
 3. **CUA 系统能力**：--version、doctor、skills status；再检查 MCP 是否连接并能列出 list_apps/get_window_state/run_steps。doctor 的零退出码不代表 GUI 验收通过，必须看每项报告。
 4. **CUA 实际操作**：确认没有占用用户已有计算器；按官方 Skill 打开测试计算器，读取快照，用后台语义动作算 6 × 7，再从新快照读到 42。不能凭模型自己知道答案就通过。检查是否切换前台；用户在同时移动鼠标时，不能把光标变化直接归因于工具。
 5. **路由**：新开 agent 聊天，检查 Ego、cua-driver Skill 和 MCP 已被发现，旧 agent-desktop 不再默认选用。临时网页/Space 和本次 session 清理完，不关闭其他任务页面或共享服务。
-6. **模型限制**：若恢复 pstack，角色继承项和宿主默认覆盖分别检查。Astra 上限既保留规则，也在实际调用时检查所传参数；未实际调用就不要声称模型路由已实测。
+6. **模型限制**：若恢复 pstack，检查 9 个角色、medium 预算换算后的 Sol Medium/High 与 Luna High，以及项目配置和宿主具名角色的覆盖。T3 中核实百炼 DS 的 provider/model，options 清空 Codex 专用参数；提供方缺失时不得静默替换。Astra 仅只读且最高 Medium。配置正确、能力目录可见与实际调用成功分别记录；未调用就不要声称路由已实测。
 
 本仓库恢复器测试：
 
