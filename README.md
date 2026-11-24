@@ -67,7 +67,8 @@ Cua Driver 与 Codex 内置 Computer Use 不是同一产品。Vercel agent-deskt
 - `skills/ego-browser/`：本仓库编写的轻量入口，实际 API 指引由安装版本的 `ego-browser skill` 提供；不冒充供应商完整 Skill。
 - `skills/setup-cua-driver/`：安装、接入、冲突处理和验收指引。实际操作使用官方安装的 `cua-driver` Skill。
 - `skills/pstack-auto/`：Codex 可选自动入口，不修改上游插件缓存。
-- `templates/AGENTS.md`：可移植的个人约定。
+- [`templates/AGENTS.md`](templates/AGENTS.md)：Codex 的用户级规则。
+- [`templates/CLAUDE.md`](templates/CLAUDE.md)：Claude Code 的用户级规则，也用作其他 agent 的通用模板。
 - `templates/pstack-models.md`：Sol / Luna / 百炼 DS 分工、预算换算、T3 路由与 Astra 上限；详见 [pstack 设置](docs/pstack.md)。
 - `scripts/restore.py`：有预览、冲突检查和备份的文件恢复器。
 - `scripts/doctor.py`：只读检查工具是否存在及 Codex 覆盖项，不输出凭证，不启动 GUI。

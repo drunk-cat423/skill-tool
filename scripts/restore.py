@@ -67,7 +67,8 @@ def reject_linked_target(path):
 
 def build_plan(args):
     home, rules, skills = destinations(args)
-    pairs = [(REPO / 'templates' / 'AGENTS.md', rules)]
+    rules_template = 'AGENTS.md' if args.agent == 'codex' else 'CLAUDE.md'
+    pairs = [(REPO / 'templates' / rules_template, rules)]
     names = ['restore-dev-environment', 'ego-browser', 'setup-cua-driver']
     if args.with_pstack:
         names.append('pstack-auto')

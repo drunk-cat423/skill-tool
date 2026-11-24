@@ -65,7 +65,8 @@ class RestoreTests(unittest.TestCase):
 
     def test_claude_uses_claude_paths_without_codex_entry(self):
         self.run_restore('--agent', 'claude', '--apply')
-        self.assertTrue((self.home / '.claude/CLAUDE.md').is_file())
+        rules = self.home / '.claude/CLAUDE.md'
+        self.assertEqual(rules.read_bytes(), (ROOT / 'templates/CLAUDE.md').read_bytes())
         self.assertTrue((self.home / '.claude/skills/ego-browser/SKILL.md').is_file())
         self.assertFalse((self.home / '.codex').exists())
         self.assertFalse((self.home / '.claude/skills/pstack-auto').exists())
@@ -74,7 +75,7 @@ class RestoreTests(unittest.TestCase):
         rules = self.home / 'custom/instructions.md'
         skills = self.home / 'custom/skills'
         self.run_restore('--agent', 'generic', '--rules-file', str(rules), '--skills-dir', str(skills), '--apply')
-        self.assertTrue(rules.is_file())
+        self.assertEqual(rules.read_bytes(), (ROOT / 'templates/CLAUDE.md').read_bytes())
         self.assertTrue((skills / 'setup-cua-driver/SKILL.md').is_file())
 
     def test_symlink_destination_is_not_followed(self):

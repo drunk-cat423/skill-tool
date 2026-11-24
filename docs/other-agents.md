@@ -12,7 +12,7 @@
 
 恢复脚本的 `--home` 用于显式目标目录及隔离测试，不更改系统 HOME。Codex home 在正常运行时尊重 CODEX_HOME；技能目录默认仍位于用户 ~/.agents/skills。定制路径可用 --rules-file 和 --skills-dir。
 
-Cursor 的规则可能需要 `.mdc` 文件及 `alwaysApply` frontmatter；恢复器不自动生成未经确认的宿主格式。请让 agent 读取 templates/AGENTS.md，将其内容转换成当前宿主支持的形式，保持偏好和 Astra 上限，不照搬 Codex 字段。
+Codex 使用 [`templates/AGENTS.md`](../templates/AGENTS.md)；Claude Code 和 `--agent generic` 使用 [`templates/CLAUDE.md`](../templates/CLAUDE.md)。Cursor 的规则可能需要 `.mdc` 文件及 `alwaysApply` frontmatter；恢复器不自动生成未经确认的宿主格式。请按实际宿主转换模板，保留个人偏好和 Astra 上限，不照搬其他宿主的设置。
 
 对于不支持 MCP 的宿主，Cua Driver 可通过 CLI 操作，但需按官方 Skill 管理服务与 session。没有本机 shell、桌面或浏览器连接能力的云端 agent，不能仅靠复制 Skill 控制另一台电脑；需要该平台支持的远程连接。不要因此开放公网端口或共享浏览器调试端口。
 
